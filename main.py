@@ -19,8 +19,7 @@ from keras.callbacks import ModelCheckpoint
 noise_val = 0.25
 image_size = 256
 num_epochs = 100
-datadir = "/home/
-platnick/LIA/Local_Images/Train/"
+datadir = "/home/danielplatnick/LIA/Local_Images/Train/"
 testdir = "/home/danielplatnick/LIA/Local_Images/Test/"
 test_output = "/home/danielplatnick/LIA/NoiseRemoval/BETA/15GRU/Results/"  # Where we want to save our test images and metrics
 
