@@ -19,9 +19,10 @@ from keras.callbacks import ModelCheckpoint
 noise_val = 0.25
 image_size = 256
 num_epochs = 100
-datadir = "/home/zeshanfayyaz/LIA/Local_Images/Train/"
-testdir = "/home/zeshanfayyaz/LIA/Local_Images/Test/"
-test_output = "/home/zeshanfayyaz/LIA/NoiseRemoval/BETA/15GRU/Results/"  # Where we want to save our test images and metrics
+datadir = "/home/
+platnick/LIA/Local_Images/Train/"
+testdir = "/home/danielplatnick/LIA/Local_Images/Test/"
+test_output = "/home/danielplatnick/LIA/NoiseRemoval/BETA/15GRU/Results/"  # Where we want to save our test images and metrics
 
 
 def main():
@@ -226,7 +227,7 @@ def main():
     print("Degrading Testing Data...")
     clean_testing_data, noisy_testing_data = degrade_test_data()
 
-    filepath = "/home/zeshanfayyaz/LIA/NoiseRemoval/BETA/15GRU/model_checkpoint.h5"
+    filepath = "/home/danielplatnick/LIA/NoiseRemoval/BETA/15GRU/model_checkpoint.h5"
     checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
     callback_list = [checkpoint]
 
@@ -276,7 +277,7 @@ def main():
         loss_val.append(loss_metrics.history['val_loss'])
         print("Done Epoch: " + str(i + 1))
 
-    model.save("/home/zeshanfayyaz/LIA/NoiseRemoval/BETA/15GRU/stripe_noise_model.h5")
+    model.save("/home/danielplatnick/LIA/NoiseRemoval/BETA/15GRU/stripe_noise_model.h5")
 
     # Once training is complete, plot the Training Loss
     plt.plot(loss_train)
